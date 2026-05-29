@@ -1,7 +1,7 @@
 import os
 
 # Paths
-DATA_PATH = "gabriellidneor/svhn-digit-recognition"
+HF_REPO_ID = "gabriellidneor/svhn-digit-recognition"
 HF_FILENAME = "SVHN_single_grey1.h5"
 
 # Local Target Path (Where the API will download the file)
