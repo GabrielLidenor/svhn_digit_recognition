@@ -1,15 +1,17 @@
 import tensorflow as tf
-import tensorflow.keras import layers, models
-import src.models.base import BaseSVHModel
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten
+from src.models.base import BaseSVHModel
+import config
 
 class SVHNANN(BaseSVHModel):
     def build(self) -> tf.keras.Model:
         model = Sequential([
-            Flatten(input_shape=config.INPUT_SHAPE),
+            Flatten(input_shape=self.input_shape),
             Dense(256, activation='relu'),
             Dropout(0.2),
             Dense(128, activation='relu'),
-            Dense(config.NUM_CLASSES, activation='softmax')
+            Dense(self.num_classes, activation='softmax')
         ])
 
         return self.compile(model)
