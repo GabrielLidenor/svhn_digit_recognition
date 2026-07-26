@@ -3,6 +3,7 @@ import config
 from src.data_loader import load_and_preprocess_data
 from src.models import SVHNCNN, SVHNANN
 from src.evaluate import evaluate_predictions
+from pathlib import Path
 
 def main(model_type: str):
     print("Step 1: Loading and preprocessing SVHN data...")
@@ -42,7 +43,12 @@ def main(model_type: str):
 
     # 3. Save the trained model weights/artifacts
     print(f"\nStep 5: Saving Model to disk as svhn_{model_type}.keras...")
-    model.save(f"svhn_{model_type}.keras")
+    artifacts_dir = Path("artifacts/models")
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+    
+    model_path = artifacts_dir / f"svhn_{model_type}.keras"
+    print(f"\nStep 5: Saving Model to disk at {model_path}...")
+    model.save(model_path)
     print("Pipeline execution complete! 🚀")
 
 if __name__ == "__main__":
