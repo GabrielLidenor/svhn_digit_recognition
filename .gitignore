@@ -1,12 +1,1 @@
-# Ignore python cache files
-__pycache__/
-*.pyc
-
-# Ignore your virtual environment
-venv/
-
-# Ignore your dataset and images
-data/raw/
-data/processed/
-*.h5
-*.pickle
+.DS_Store
