@@ -1,12 +1,13 @@
 import tensorflow as tf
-import tensorflow.keras import layers, models
-import src.models.base import BaseSVHModel
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, BatchNormalization, LeakyReLU
+from src.models.base import BaseSVHModel
 import config
 
 class SVHNCNN(BaseSVHModel):
     def build(self) -> tf.keras.Model:
         model = Sequential([
-            Conv2D(32, (3, 3), padding='same', input_shape=config.INPUT_SHAPE),
+            Conv2D(32, (3, 3), padding='same', input_shape=self.input_shape),
             LeakyReLU(alpha=0.1),
             BatchNormalization(),
             Conv2D(32, (3, 3), padding='same'),
@@ -18,7 +19,7 @@ class SVHNCNN(BaseSVHModel):
             Flatten(),
             Dense(128, activation='relu'),
             Dropout(0.5),
-            Dense(config.NUM_CLASSES, activation='softmax')
+            Dense(self.num_classes, activation='softmax')
         ])
 
         return self.compile(model)
