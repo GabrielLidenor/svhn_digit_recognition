@@ -44,10 +44,11 @@ svhn_digit_recognition/
 ├── train.py                  # CLI pipeline orchestrator
 ├── requirements-dev.txt      # Pinned development & testing dependencies
 └── requirements.txt          # Production runtime dependencies
-
+```
 ## ⚡ Setup & Installation
 
 ### 1. Clone the Repository
+
 ```bash
 git clone [https://github.com/GabrielLidenor/svhn_digit_recognition.git](https://github.com/GabrielLidenor/svhn_digit_recognition.git)
 cd svhn_digit_recognition
