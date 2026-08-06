@@ -1,17 +1,27 @@
 # 🔢 Street View House Numbers (SVHN) Digit Recognition Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue.svg)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15+-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Data-Hugging%20Face-yellow)
-![Tests](https://img.shields.io/badge/Tests-PyTest-green.svg)
+[![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15+-orange.svg)](https://www.tensorflow.org/)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/gabriellidenor/svhn-digit-demo)
+[![Space Status](https://img.shields.io/badge/%F0%9F%A4%97%20Space-Running-brightgreen)](https://huggingface.co/spaces/GabrielLidenor/svhn-digit-demo)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/Tests-PyTest-green.svg)](tests/)
 
 A modular, production-grade computer vision pipeline engineered to classify cropped house numbers from the SVHN dataset. Built with clean software engineering principles, object-oriented model architectures, automated data ingestion, and rigorous unit testing.
 
 ---
 
-## 🚀 Key Features
+## 🚀 Live Demo
 
+Try the interactive digit recognition app directly in your browser—no local installation required:
+
+👉 **[Launch Hugging Face Space Demo](https://huggingface.co/spaces/gabriellidenor/svhn-digit-demo)**
+
+---
+
+## 🔑 Key Features
+
+* **Interactive Web App:** Deployed on Hugging Face Spaces using Gradio for real-time model testing.
 * **Modular OOP Architecture:** Clean inheritance hierarchy using `BaseSVHNModel` to decouple model definitions, hyperparameters, and training logic.
 * **CLI-Driven Pipeline:** Easily toggle between architectures (`--model cnn|ann`) and run end-to-end training via parameterized execution.
 * **Automated Data Layer:** Seamless integration with the Hugging Face Hub API—data streams automatically on demand without committing large datasets to Git.
